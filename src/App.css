@@ -18,10 +18,16 @@
 
 .nav {
   border: solid 2px purple;
+  display: flex;
+  justify-content: space-evenly;
+  text-transform: capitalize;
 }
 
 .main {
   border: solid 2px orange;
+}
+.main h2 {
+  text-transform: capitalize;
 }
 
 .footer {

@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
+import { Link } from "@reach/router";
 
 class Articles extends Component {
   state = {
     articles: []
   };
   render() {
+    const { topic } = this.props;
     const { articles } = this.state;
     return (
       <div>
         <ul>
+          <h2>{topic ? `Articles on ${topic}` : "All Articles"}</h2>
           {articles.map(article => {
-            return <li key={article.article_id}>{article.title}</li>;
+            return (
+              <li key={article.article_id}>
+                <Link to={`/article/${article.article_id}`}>
+                  {article.title}
+                </Link>
+              </li>
+            );
           })}
         </ul>
       </div>
@@ -23,13 +32,12 @@ class Articles extends Component {
 
   fetchArticles = () => {
     const { topic } = this.props;
-    console.log(topic);
     api.getArticles(topic).then(articles => {
       this.setState({ articles });
     });
   };
   componentDidUpdate = (prevProps, prevState) => {
-    const newArticles = this.state !== prevState;
+    const newArticles = this.props.topic !== prevProps.topic;
     if (newArticles) {
       this.fetchArticles();
     }
