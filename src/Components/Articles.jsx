@@ -30,6 +30,9 @@ class Articles extends Component {
   };
   componentDidUpdate = (prevProps, prevState) => {
     const newArticles = this.state !== prevState;
+    if (newArticles) {
+      this.fetchArticles();
+    }
   };
 }
 
