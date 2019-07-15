@@ -8,14 +8,23 @@ import Footer from "./Components/Footer";
 
 class App extends Component {
   state = {
-    topics: []
+    topics: [
+      {
+        slug: "coding",
+        description: "Code is love, code is life"
+      },
+      {
+        slug: "football",
+        description: "FOOTIE!"
+      }
+    ]
   };
   render() {
     const { topics } = this.state;
     return (
       <div className="App">
         <Header />
-        <Nav />
+        <Nav topics={topics} />
         <Router className="main">
           <Articles path="/" />
         </Router>
