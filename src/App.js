@@ -5,6 +5,7 @@ import Header from "./Components/Header";
 import Nav from "./Components/Nav";
 import Articles from "./Components/Articles";
 import Footer from "./Components/Footer";
+import * as api from "./utils/api";
 
 class App extends Component {
   state = {
@@ -32,6 +33,13 @@ class App extends Component {
       </div>
     );
   }
+  componentDidMount = () => {
+    this.fetchTopics();
+  };
+
+  fetchTopics = () => {
+    api.getTopics().then(topics => this.setState({ topics }));
+  };
 }
 
 export default App;
