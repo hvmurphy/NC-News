@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Nav />
-        <Router>
+        <Router className="main">
           <Articles path="/" />
         </Router>
         <Footer />

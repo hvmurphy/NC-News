@@ -6,7 +6,7 @@ class Articles extends Component {
   };
   render() {
     const { articles } = this.state;
-    return <div className="articles">Some articles here</div>;
+    return <div>Some articles here</div>;
   }
 }
 
