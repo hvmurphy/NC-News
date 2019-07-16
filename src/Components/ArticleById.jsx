@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
+import Comments from "./Comments";
 
 class ArticleById extends Component {
-  state = { article: [] };
+  state = {
+    article: []
+  };
   render() {
     const { article } = this.state;
     return (
@@ -14,6 +17,9 @@ class ArticleById extends Component {
         </h3>
         <p>{article.body}</p>
         <h4>Votes: {article.votes}</h4>
+        <div>
+          <Comments article_id={this.props.article_id} />
+        </div>
       </div>
     );
   }

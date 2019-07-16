@@ -4,10 +4,16 @@ import { Link } from "@reach/router";
 const Nav = ({ topics }) => {
   return (
     <nav className="nav">
-      <Link to="/">Home</Link>
+      <Link to="/" className="home">
+        Home
+      </Link>
       {topics.map(topic => {
         return (
-          <Link to={`/topics/${topic.slug}`} key={topic.slug}>
+          <Link
+            to={`/articles/${topic.slug}`}
+            key={topic.slug}
+            className={`${topic.slug}`}
+          >
             {topic.slug}
           </Link>
         );

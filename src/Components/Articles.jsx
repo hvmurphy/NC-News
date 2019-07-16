@@ -15,7 +15,7 @@ class Articles extends Component {
           <h2>{topic ? `Articles on ${topic}` : "All Articles"}</h2>
           {articles.map(article => {
             return (
-              <li key={article.article_id}>
+              <li key={article.article_id} className="article">
                 <Link to={`/article/${article.article_id}`}>
                   {article.title}
                 </Link>

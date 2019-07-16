@@ -7,29 +7,116 @@
   grid-template-areas:
     "header"
     "nav"
-    "articles"
+    "main"
     "footer";
+  font-family: "Poppins", sans-serif;
+  color: #464868;
+  background: #ececec;
 }
 
 .header {
-  border: solid 2px green;
+  grid-area: header;
   margin: 0px;
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 4em;
+  background: white;
+}
+.nc {
+  color: #3279a8;
+  font-size: 1.5em;
+  font-family: "Monoton", cursive;
 }
 
 .nav {
-  border: solid 2px purple;
+  grid-area: nav;
   display: flex;
   justify-content: space-evenly;
   text-transform: capitalize;
+  background: #464868;
+  text-decoration-color: #ececec;
+}
+
+.nav a::first-letter {
+  font-family: "Monoton", cursive;
+  font-size: 1.2em;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ececec;
+  font-size: 1.5em;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 200ms ease-out;
+  font-weight: bold;
 }
 
 .main {
-  border: solid 2px orange;
+  grid-area: main;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .main h2 {
   text-transform: capitalize;
 }
 
+ul {
+  list-style: none;
+}
+
+.article {
+  width: 28%;
+  font-size: 1.1em;
+  background-color: white;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.article a {
+  text-decoration: none;
+  color: #29648a;
+}
+
 .footer {
-  border: solid 2px blue;
+  grid-area: footer;
+  background: #464868;
+  color: #ececec;
+  padding: 10px;
+}
+
+a.cooking::first-letter {
+  color: #9bbaa6;
+}
+
+a.cooking:hover {
+  color: #9bbaa6;
+}
+a.coding::first-letter {
+  color: #f78888;
+}
+a.coding:hover {
+  color: #f78888;
+}
+a.football::first-letter {
+  color: #f3d250;
+}
+a.football:hover {
+  color: #f3d250;
+}
+
+a.home::first-letter {
+  color: #3279a8;
+}
+
+a.home:hover {
+  color: #3279a8;
 }

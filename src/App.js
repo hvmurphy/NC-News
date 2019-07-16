@@ -10,16 +10,7 @@ import ArticleById from "./Components/ArticleById";
 
 class App extends Component {
   state = {
-    topics: [
-      {
-        slug: "coding",
-        description: "Code is love, code is life"
-      },
-      {
-        slug: "football",
-        description: "FOOTIE!"
-      }
-    ]
+    topics: []
   };
   render() {
     const { topics } = this.state;
@@ -29,7 +20,7 @@ class App extends Component {
         <Nav topics={topics} />
         <Router className="main">
           <Articles path="/" />
-          <Articles path="/topics/:topic" />
+          <Articles path="/articles/:topic" />
           <ArticleById path="/article/:article_id" />
         </Router>
         <Footer />
