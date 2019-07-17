@@ -7,7 +7,6 @@ class Comments extends Component {
   state = {
     comments: [],
     username: "jessjelly"
-    // commentToBeDeleted: 0
   };
   render() {
     const { comments, username } = this.state;
@@ -15,7 +14,7 @@ class Comments extends Component {
       <div className="comments">
         <AddComment
           article_id={this.props.article_id}
-          fetchComments={this.fetchComments}
+          updateComments={this.updateComments}
         />
         <CommentsList
           comments={comments}
@@ -36,7 +35,8 @@ class Comments extends Component {
   };
 
   updateComments = newComment => {
-    const { comments } = this.State;
+    const { comments } = this.state;
+    this.setState({ comments: [newComment, ...comments] });
   };
 }
 

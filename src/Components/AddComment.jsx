@@ -32,9 +32,10 @@ class AddComment extends Component {
     event.preventDefault();
     const comment = this.state;
     const { article_id } = this.props;
-    api.postComment(article_id, comment).then(() => {
-      this.props.fetchComments();
+    api.postComment(article_id, comment).then(comment => {
+      this.props.updateComments(comment);
     });
+    this.setState({ body: "" });
   };
 }
 
