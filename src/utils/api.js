@@ -49,3 +49,10 @@ export const getSortedArticles = async (topic, sortby) => {
     return data.articles;
   }
 };
+
+export const vote = async (id, inc_votes, section) => {
+  const { data } = await axios.patch(`${BASE_URL}/${section}/${id}`, {
+    inc_votes
+  });
+  return data.votes;
+};

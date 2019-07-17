@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
+import Votes from "./Votes";
 
 class CommentsList extends Component {
   state = {
@@ -17,7 +18,11 @@ class CommentsList extends Component {
                 <li key={comment.comment_id}>
                   <p>{comment.body}</p>
                   <p>Author: {comment.author}</p>
-                  <h4>Votes: {comment.votes}</h4>
+                  <Votes
+                    votes={comment.votes}
+                    id={comment.comment_id}
+                    section="comments"
+                  />
                   <form onSubmit={this.handleDelete}>
                     <button
                       type="submit"
@@ -35,7 +40,11 @@ class CommentsList extends Component {
                 <li key={comment.comment_id}>
                   <p>{comment.body}</p>
                   <p>Author: {comment.author}</p>
-                  <h4>Votes: {comment.votes}</h4>
+                  <Votes
+                    votes={comment.votes}
+                    id={comment.comment_id}
+                    section="comments"
+                  />
                 </li>
               );
             }

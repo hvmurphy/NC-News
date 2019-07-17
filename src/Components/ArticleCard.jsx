@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
+import Votes from "./Votes";
 
 class ArticleCard extends Component {
   render() {
@@ -14,6 +15,11 @@ class ArticleCard extends Component {
                   {article.title}
                 </Link>
                 Comment Count: {article.comment_count}
+                <Votes
+                  votes={article.votes}
+                  id={article.article_id}
+                  section="articles"
+                />
               </li>
             );
           })}
