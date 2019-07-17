@@ -37,3 +37,15 @@ export const postComment = async (article_id, comment) => {
 export const deleteComment = async comment => {
   await axios.delete(`${BASE_URL}/comments/${comment}`);
 };
+
+export const getSortedArticles = async (topic, sortby) => {
+  if (topic) {
+    const { data } = await axios.get(
+      `${BASE_URL}/articles?topic=${topic}&sort_by=${sortby}`
+    );
+    return data.articles;
+  } else {
+    const { data } = await axios.get(`${BASE_URL}/articles?sort_by=${sortby}`);
+    return data.articles;
+  }
+};
