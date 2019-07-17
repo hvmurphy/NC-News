@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
-import Comments from "./Comments";
 
-class ArticleById extends Component {
+class ArticleText extends Component {
   state = {
     article: []
   };
   render() {
     const { article } = this.state;
     return (
-      <div>
+      <div className="articleText">
         <h2>{article.title}</h2>
         <h3>
           Author: {article.author} <br />
@@ -17,9 +16,6 @@ class ArticleById extends Component {
         </h3>
         <p>{article.body}</p>
         <h4>Votes: {article.votes}</h4>
-        <div>
-          <Comments article_id={this.props.article_id} />
-        </div>
       </div>
     );
   }
@@ -33,4 +29,4 @@ class ArticleById extends Component {
   };
 }
 
-export default ArticleById;
+export default ArticleText;

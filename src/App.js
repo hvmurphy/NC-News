@@ -6,7 +6,7 @@ import Nav from "./Components/Nav";
 import Articles from "./Components/Articles";
 import Footer from "./Components/Footer";
 import * as api from "./utils/api";
-import ArticleById from "./Components/ArticleById";
+import ArticlePage from "./Components/ArticlePage";
 
 class App extends Component {
   state = {
@@ -21,7 +21,7 @@ class App extends Component {
         <Router className="main">
           <Articles path="/" />
           <Articles path="/articles/:topic" />
-          <ArticleById path="/article/:article_id" />
+          <ArticlePage path="/article/:article_id" />
         </Router>
         <Footer />
       </div>

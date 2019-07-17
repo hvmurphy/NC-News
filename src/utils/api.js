@@ -25,3 +25,14 @@ export const getComments = async article_id => {
   );
   return data.comments;
 };
+
+export const postComment = async (article_id, comment) => {
+  console.log(comment);
+  console.log(article_id);
+
+  const { data } = await axios.post(
+    `${BASE_URL}/articles/${article_id}/comments`,
+    comment
+  );
+  return data.comment;
+};
