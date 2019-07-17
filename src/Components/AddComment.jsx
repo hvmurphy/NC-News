@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
-import { navigate } from "@reach/router";
 
 class AddComment extends Component {
   state = {
@@ -33,11 +32,9 @@ class AddComment extends Component {
     event.preventDefault();
     const comment = this.state;
     const { article_id } = this.props;
-    api.postComment(article_id, comment).then(
-      navigate(`/article/${article_id}`, {
-        postSuccessful: true
-      })
-    );
+    api.postComment(article_id, comment).then(() => {
+      this.props.fetchComments();
+    });
   };
 }
 
