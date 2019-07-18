@@ -6,10 +6,10 @@ class Votes extends Component {
   render() {
     const { votes } = this.props;
     return (
-      <div>
-        <button onClick={() => this.vote(1)}> + </button>
+      <div className="votes">
+        <button onClick={() => this.vote(-1)}> - </button>
         <p>Votes: {votes + this.state.voteChange}</p>
-        <button onClick={() => this.vote(-1)}>- </button>
+        <button onClick={() => this.vote(1)}>+</button>
       </div>
     );
   }

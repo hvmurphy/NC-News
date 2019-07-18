@@ -5,20 +5,20 @@ class SortBy extends Component {
   state = { sortby: "" };
   render() {
     return (
-      <form onSubmit={this.handleOnSubmit}>
+      <form onSubmit={this.handleOnSubmit} className="sort">
         Sort By:
         <button type="submit" value="date" onClick={this.handleOnClick}>
-          Date
+          Most Recent
         </button>
         <button
           type="submit"
           value="comment_count"
           onClick={this.handleOnClick}
         >
-          Comment Count
+          Most Commented
         </button>
         <button type="submit" value="votes" onClick={this.handleOnClick}>
-          Vote Count
+          Most Popular
         </button>
       </form>
     );

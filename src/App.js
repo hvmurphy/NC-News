@@ -7,6 +7,7 @@ import Articles from "./Components/Articles";
 import Footer from "./Components/Footer";
 import * as api from "./utils/api";
 import ArticlePage from "./Components/ArticlePage";
+import Error from "./Components/Error";
 
 class App extends Component {
   state = {
@@ -22,6 +23,7 @@ class App extends Component {
           <Articles path="/" />
           <Articles path="/articles/:topic" />
           <ArticlePage path="/article/:article_id" />
+          <Error default path="/error" />
         </Router>
         <Footer />
       </div>

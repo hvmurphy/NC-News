@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
+import { navigate } from "@reach/router";
 
 class ArticleText extends Component {
   state = {
@@ -25,7 +26,15 @@ class ArticleText extends Component {
 
   fetchArticleByID = () => {
     const { article_id } = this.props;
-    api.getArticleByID(article_id).then(article => this.setState({ article }));
+    api
+      .getArticleByID(article_id)
+      .then(article => this.setState({ article }))
+      .catch(err => {
+        navigate(`/error`, {
+          state: { message: err.msg },
+          replace: true
+        });
+      });
   };
 }
 

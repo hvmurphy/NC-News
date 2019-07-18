@@ -9,7 +9,7 @@ class Articles extends Component {
     const { articles } = this.state;
     const { topic } = this.props;
     return (
-      <div>
+      <div className="articlesPage">
         <h2>{topic ? `Articles on ${topic}` : "All Articles"}</h2>
         <SortBy
           fetchArticles={this.fetchArticles}
