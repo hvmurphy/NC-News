@@ -336,7 +336,7 @@ button:hover {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: unset;
   }
   .commentslist {
     overflow-y: unset;
