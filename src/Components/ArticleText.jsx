@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import { navigate } from "@reach/router";
+import Votes from "./Votes";
 
 class ArticleText extends Component {
   state = {
@@ -10,13 +11,18 @@ class ArticleText extends Component {
     const { article } = this.state;
     return (
       <div className="articleText">
+        <p className="topic">{article.topic} </p>
         <h2>{article.title}</h2>
-        <h3>
-          Author: {article.author} <br />
-          Topic: {article.topic}
-        </h3>
-        <p>{article.body}</p>
-        <h4>Votes: {article.votes}</h4>
+        <p className="author">
+          Author: {article.author} <span>Posted: {article.created_at}</span>
+        </p>
+
+        <p className="body">{article.body}</p>
+        <Votes
+          votes={article.votes}
+          id={article.article_id}
+          section="articles"
+        />
       </div>
     );
   }

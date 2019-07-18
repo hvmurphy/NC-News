@@ -141,13 +141,13 @@ ul {
   justify-content: center;
   align-content: center;
 }
-.sort button {
+button {
   margin: 0px 0px 0px 10px;
   border-radius: 10px;
   font-family: "Poppins", sans-serif;
   font-size: 0.9em;
 }
-.sort button:hover {
+button:hover {
   cursor: pointer;
   background: #3279a8;
   color: white;
@@ -189,7 +189,9 @@ ul {
   font-style: oblique;
   font-size: 0.8em;
 }
-
+.author span {
+  margin-left: 10px;
+}
 .votes {
   display: flex;
   flex-direction: row;
@@ -209,6 +211,7 @@ ul {
   border-radius: 5px;
   font-size: 0.5em;
   font-weight: bold;
+  margin: 0px 10px;
 }
 .votes button:hover {
   cursor: pointer;
@@ -235,38 +238,85 @@ ul {
 }
 
 .ArticlePage {
-  border: solid pink 2px;
   text-align: center;
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 2fr 4fr;
+
   grid-template-areas:
     "articleText"
-    "addComment"
-    "comments ";
+    "comments";
 }
 .articleText {
   grid-area: articleText;
-  border: solid purple 2px;
+  padding: 0px 15px;
 }
+.articleText .body {
+  font-size: 1.1em;
+  text-align: justify;
+  padding: 10px;
+}
+.articleText .votes {
+  font-size: 1.5em;
+  justify-content: center;
+}
+
+.articleText .author {
+  font-size: 1em;
+  color: #3279a8;
+}
+
 .comments {
   grid-area: comments;
   background: white;
   margin: 10px;
   border-radius: 10px;
-  border: solid green 2px;
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
 }
 .addComment {
-  grid-area: addComment;
-  border: solid 2px red;
-  background: white;
-  margin: 10px;
+  background: #464868;
+  margin: 40px 0px 40px 20px;
   border-radius: 10px;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+.addComment input {
+  border-radius: 10px;
+  width: 500px;
+  height: 100px;
+  margin: 10px 0px 10px 0px;
+}
+
+.commentslist {
+  overflow-y: scroll;
+}
+
+.comment {
+  border: #3279a8 solid 1px;
+  margin: 0px 37px 10px 0px;
+  border-radius: 10px;
+  font-size: 1em;
+}
+.comment:hover {
+  box-shadow: 0px 0px 5px 2px#3279a8;
+}
+
+.comment .votes {
+  font-size: 1.2em;
+  justify-content: center;
+}
+.comment .author {
+  font-size: 0.9em;
+  color: #3279a8;
 }
 
 @media only screen and (max-width: 550px) {
-  .sort button {
-    font-size: calc(13px + 1vw);
+  .App {
+    font-size: min(0.8);
   }
 }

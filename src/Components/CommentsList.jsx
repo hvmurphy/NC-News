@@ -9,20 +9,18 @@ class CommentsList extends Component {
   render() {
     const { comments, username } = this.props;
     return (
-      <div className="comments">
+      <div className="commentslist">
         <h3>Comments:</h3>
         <ul>
           {comments.map(comment => {
             if (username === comment.author) {
               return (
-                <li key={comment.comment_id}>
+                <li key={comment.comment_id} className="comment">
                   <p>{comment.body}</p>
-                  <p>Author: {comment.author}</p>
-                  <Votes
-                    votes={comment.votes}
-                    id={comment.comment_id}
-                    section="comments"
-                  />
+                  <p className="author">
+                    Author: {comment.author}{" "}
+                    <span>Posted: {comment.created_at}</span>
+                  </p>
                   <form onSubmit={this.handleDelete}>
                     <button
                       type="submit"
@@ -32,14 +30,22 @@ class CommentsList extends Component {
                     >
                       Delete Comment
                     </button>
+                    <Votes
+                      votes={comment.votes}
+                      id={comment.comment_id}
+                      section="comments"
+                    />
                   </form>
                 </li>
               );
             } else {
               return (
-                <li key={comment.comment_id}>
+                <li key={comment.comment_id} className="comment">
                   <p>{comment.body}</p>
-                  <p>Author: {comment.author}</p>
+                  <p className="author">
+                    Author: {comment.author}{" "}
+                    <span>Posted: {comment.created_at}</span>
+                  </p>
                   <Votes
                     votes={comment.votes}
                     id={comment.comment_id}

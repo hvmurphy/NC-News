@@ -8,7 +8,7 @@ class Votes extends Component {
     return (
       <div className="votes">
         <button onClick={() => this.vote(-1)}> - </button>
-        <p>Votes: {votes + this.state.voteChange}</p>
+        <p> Votes: {votes + this.state.voteChange}</p>
         <button onClick={() => this.vote(1)}>+</button>
       </div>
     );

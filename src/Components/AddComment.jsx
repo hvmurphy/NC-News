@@ -10,14 +10,14 @@ class AddComment extends Component {
     return (
       <div className="addComment">
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="body">Enter a Comment: </label>
+          <label htmlFor="body">Add Comment: </label>
           <input
             type="text"
             id="body"
             value={this.state.body}
             onChange={this.handleChange}
           />
-          <button type="submit">Add Comment!</button>
+          <button type="submit">Post</button>
         </form>
       </div>
     );

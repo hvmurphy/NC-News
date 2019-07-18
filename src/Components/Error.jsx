@@ -7,6 +7,7 @@ const Error = () => {
       {this.props.location && this.props.location.state && (
         <p>{this.props.location.state.message}</p>
       )}
+      <button>Take me back!</button>
     </div>
   );
 };
