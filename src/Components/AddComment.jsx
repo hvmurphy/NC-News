@@ -14,7 +14,6 @@ class AddComment extends Component {
           <br />
           <textarea
             rows="7"
-            cols="50"
             type="text"
             id="body"
             value={this.state.body}
