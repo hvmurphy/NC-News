@@ -358,4 +358,21 @@ button:hover {
     font-family: "Poppins", sans-serif;
     resize: both;
   }
+  .articleList {
+    overflow-y: unset;
+  }
+  .Header {
+    grid-area: header;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 2em;
+    background: white;
+  }
+  .nav a {
+    text-decoration: none;
+    color: #ececec;
+    font-size: 1.3em;
+  }
 }
