@@ -318,6 +318,11 @@ button:hover {
   color: #3279a8;
 }
 
+.error p {
+  font-size: 2em;
+  color: #3279a8;
+}
+
 @media only screen and (max-width: 600px) {
   .App {
     font-size: min(0.8);
