@@ -379,10 +379,6 @@ button:hover {
     overflow-y: scroll;
   }
   button {
-    margin: 0px 0px 0px 10px;
-    border-radius: 10px;
-    font-family: "Poppins", sans-serif;
-    font-size: 0.9em;
-    border: white;
+    -webkit-appearance: none;
   }
 }
