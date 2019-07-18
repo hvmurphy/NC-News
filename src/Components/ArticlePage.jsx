@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Comments from "./Comments";
 import ArticleText from "./ArticleText";
-import AddComment from "./AddComment";
 
 class ArticlePage extends Component {
   state = {

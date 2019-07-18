@@ -120,7 +120,7 @@ ul {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-rows: 2fr 1fr 20fr;
+  grid-template-rows: 1fr 1fr 20fr;
   grid-template-areas:
     "title"
     "sort"
@@ -269,6 +269,7 @@ button:hover {
 
 .comments {
   grid-area: comments;
+  min-height: 300px;
   background: white;
   margin: 10px;
   border-radius: 10px;
@@ -278,18 +279,19 @@ button:hover {
 }
 .addComment {
   background: #464868;
-  margin: 40px 0px 40px 20px;
+  margin: 30px 0px 30px 20px;
   border-radius: 10px;
   padding: 20px;
   color: white;
   font-weight: bold;
   text-align: left;
+  height: 210px;
 }
-.addComment input {
+.addComment textarea {
   border-radius: 10px;
-  width: 500px;
-  height: 100px;
   margin: 10px 0px 10px 0px;
+  font-size: 0.8em;
+  font-family: "Poppins", sans-serif;
 }
 
 .commentslist {
@@ -301,6 +303,7 @@ button:hover {
   margin: 0px 37px 10px 0px;
   border-radius: 10px;
   font-size: 1em;
+  min-width: 200px;
 }
 .comment:hover {
   box-shadow: 0px 0px 5px 2px#3279a8;
@@ -315,8 +318,39 @@ button:hover {
   color: #3279a8;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .App {
     font-size: min(0.8);
+  }
+
+  .comments {
+    grid-area: comments;
+    min-height: 300px;
+    background: white;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+  .commentslist {
+    overflow-y: unset;
+  }
+  .addComment {
+    background: #464868;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    height: 210px;
+  }
+  .addComment textarea {
+    border-radius: 10px;
+    margin: 10px 0px 10px 0px;
+    font-size: 0.8em;
+    font-family: "Poppins", sans-serif;
+    resize: both;
   }
 }

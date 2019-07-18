@@ -37,7 +37,7 @@ class ArticleText extends Component {
       .then(article => this.setState({ article }))
       .catch(err => {
         navigate(`/error`, {
-          state: { message: err.msg },
+          state: { message: "Article does not exist" },
           replace: true
         });
       });

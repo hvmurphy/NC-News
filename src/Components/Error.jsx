@@ -1,13 +1,18 @@
 import React from "react";
+import { Link } from "@reach/router";
 
-const Error = () => {
+const Error = props => {
   return (
     <div>
-      <h1>Sorry!</h1>
-      {this.props.location && this.props.location.state && (
-        <p>{this.props.location.state.message}</p>
+      {console.log(props)}
+      <h1>Sorry, no can do!</h1>
+      {props.location && props.location.state && (
+        <p>{props.location.state.message}</p>
       )}
-      <button>Take me back!</button>
+
+      <Link to="/">
+        <button>Take me back! </button>
+      </Link>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import SortBy from "./SortBy";
+import { navigate } from "@reach/router";
 
 class Articles extends Component {
   state = { articles: [] };
@@ -27,9 +28,17 @@ class Articles extends Component {
 
   fetchArticles = () => {
     const { topic } = this.props;
-    api.getArticles(topic).then(articles => {
-      this.setState({ articles });
-    });
+    api
+      .getArticles(topic)
+      .then(articles => {
+        this.setState({ articles });
+      })
+      .catch(err => {
+        navigate(`/error`, {
+          state: { message: "Cannot find articles on requested topic" },
+          replace: true
+        });
+      });
   };
 
   sortArticles = articles => {

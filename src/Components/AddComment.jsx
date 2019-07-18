@@ -11,12 +11,16 @@ class AddComment extends Component {
       <div className="addComment">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="body">Add Comment: </label>
-          <input
+          <br />
+          <textarea
+            rows="7"
+            cols="50"
             type="text"
             id="body"
             value={this.state.body}
             onChange={this.handleChange}
           />
+          <br />
           <button type="submit">Post</button>
         </form>
       </div>
