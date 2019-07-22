@@ -179,7 +179,7 @@ button:hover {
 }
 .topic {
   font-family: "Monoton", cursive;
-  font-size: 1.4em;
+  font-size: 1.8em;
   margin: 25px auto;
 }
 .topic::first-letter {
@@ -380,5 +380,7 @@ button:hover {
   }
   button {
     -webkit-appearance: none;
+    z-index: -1;
+    position: relative;
   }
 }

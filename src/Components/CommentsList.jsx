@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import Votes from "./Votes";
+import moment from "moment";
 
 class CommentsList extends Component {
   state = {
@@ -19,7 +20,7 @@ class CommentsList extends Component {
                   <p>{comment.body}</p>
                   <p className="author">
                     Author: {comment.author}{" "}
-                    <span>Posted: {comment.created_at}</span>
+                    <span>Posted: {moment(comment.created_at).calendar()}</span>
                   </p>
                   <form onSubmit={this.handleDelete}>
                     <button
@@ -44,7 +45,7 @@ class CommentsList extends Component {
                   <p>{comment.body}</p>
                   <p className="author">
                     Author: {comment.author}{" "}
-                    <span>Posted: {comment.created_at}</span>
+                    <span>Posted: {moment(comment.created_at).calendar()}</span>
                   </p>
                   <Votes
                     votes={comment.votes}

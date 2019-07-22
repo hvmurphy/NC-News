@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import { navigate } from "@reach/router";
 import Votes from "./Votes";
+import moment from "moment";
 
 class ArticleText extends Component {
   state = {
@@ -14,7 +15,8 @@ class ArticleText extends Component {
         <p className="topic">{article.topic} </p>
         <h2>{article.title}</h2>
         <p className="author">
-          Author: {article.author} <span>Posted: {article.created_at}</span>
+          Author: {article.author}{" "}
+          <span>Posted: {moment(article.created_at).calendar()}</span>
         </p>
 
         <p className="body">{article.body}</p>
