@@ -415,6 +415,11 @@ button:hover {
     font-size: 2em;
     background: white;
   }
+  .HeaderSection {
+    grid-area: header;
+    background: white;
+    padding-top: auto;
+  }
   .nav a {
     text-decoration: none;
     color: #ececec;
