@@ -103,7 +103,9 @@ a.cooking:hover {
   color: #ececec;
   padding: 10px;
 }
-
+.footer img {
+  height: 25px;
+}
 .main {
   grid-area: main;
   overflow-y: scroll;
@@ -147,6 +149,7 @@ button {
   font-family: "Poppins", sans-serif;
   font-size: 0.9em;
 }
+
 button:hover {
   cursor: pointer;
   background: #3279a8;
@@ -208,6 +211,14 @@ button:hover {
 .votes button {
   background: #464868;
   color: white;
+  border-radius: 5px;
+  font-size: 0.5em;
+  font-weight: bold;
+  margin: 0px 10px;
+}
+.votes button:disabled {
+  background: #ececec;
+  color: #3279a8;
   border-radius: 5px;
   font-size: 0.5em;
   font-weight: bold;
@@ -285,8 +296,14 @@ button:hover {
   color: white;
   font-weight: bold;
   text-align: left;
-  height: 210px;
+  height: 240px;
 }
+.commentErr {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #f78888;
+}
+
 .addComment textarea {
   border-radius: 10px;
   margin: 10px 0px 10px 0px;

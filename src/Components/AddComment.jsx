@@ -4,9 +4,11 @@ import * as api from "../utils/api";
 class AddComment extends Component {
   state = {
     body: "",
-    username: this.props.username
+    username: this.props.username,
+    commentErr: ""
   };
   render() {
+    console.log(this.state);
     return (
       <div className="addComment">
         <form onSubmit={this.handleSubmit}>
@@ -22,23 +24,28 @@ class AddComment extends Component {
           <br />
           <button type="submit">Post</button>
         </form>
+        <p className="commentErr">{this.state.commentErr}</p>
       </div>
     );
   }
 
   handleChange = event => {
     const { id, value } = event.target;
-    this.setState({ [id]: value });
+    this.setState({ [id]: value, commentErr: "" });
   };
 
   handleSubmit = event => {
     event.preventDefault();
     const comment = this.state;
     const { article_id } = this.props;
-    api.postComment(article_id, comment).then(comment => {
-      this.props.updateComments(comment);
-    });
-    this.setState({ body: "" });
+    if (comment.body.length >= 1) {
+      api.postComment(article_id, comment).then(comment => {
+        this.props.updateComments(comment);
+      });
+      this.setState({ body: "" });
+    } else {
+      this.setState({ commentErr: "Invalid comment!" });
+    }
   };
 }
 

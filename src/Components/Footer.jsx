@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "@reach/router";
+import icon from "../Images/githubIcon.png";
 
 const Footer = () => {
   return (
     <div className="footer">
       Visit my{" "}
-      <Link to="https://github.com/hvmurphy" className="github">
-        GitHub
-      </Link>
+      <a href="https://github.com/hvmurphy" className="github">
+        GitHub <img src={icon} alt="GitHub Logo" />
+      </a>
     </div>
   );
 };

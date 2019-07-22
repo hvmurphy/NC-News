@@ -7,7 +7,7 @@ const Header = ({ username }) => {
         <span className="nc">NC </span>News
       </h1>
       <p className="login">
-        Logged in as: <span>{username}</span>
+        Logged in as: <select name="username" />
       </p>
     </div>
   );

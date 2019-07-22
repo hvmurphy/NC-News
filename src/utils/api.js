@@ -56,3 +56,8 @@ export const vote = async (id, inc_votes, section) => {
   });
   return data.votes;
 };
+
+export const getUsers = async () => {
+  const { data } = await axios.get(`${BASE_URL}/users`);
+  return data.user;
+};
