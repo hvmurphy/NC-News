@@ -407,18 +407,19 @@ button:hover {
     overflow-y: unset;
   }
   .Header {
-    grid-area: header;
     margin: 0px;
     font-family: "Poppins", sans-serif;
-    padding: 0px;
+    padding: 10px 10px 5px 10px;
     font-weight: 400;
-    font-size: 2em;
-    background: white;
+    font-size: 4em;
+    padding-top: 0px;
+    line-height: 1;
   }
   .HeaderSection {
     grid-area: header;
     background: white;
-    padding-top: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
   .nav a {
     text-decoration: none;
