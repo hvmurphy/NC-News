@@ -410,7 +410,7 @@ button:hover {
     grid-area: header;
     margin: 0px;
     font-family: "Poppins", sans-serif;
-    padding: 10px;
+    padding: 0px;
     font-weight: 400;
     font-size: 2em;
     background: white;
@@ -423,9 +423,10 @@ button:hover {
   .ArticlePage {
     overflow-y: scroll;
   }
-  button {
-    -webkit-appearance: none;
-    z-index: -1;
-    position: relative;
+  .login {
+    margin: 0px;
+    justify-content: flex-end;
+    margin-bottom: auto;
+    display: flex;
   }
 }
