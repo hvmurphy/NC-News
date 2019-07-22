@@ -1,13 +1,13 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ username }) => {
   return (
     <div>
       <h1 className="Header">
         <span className="nc">NC </span>News
       </h1>
       <p className="login">
-        Logged in as: <span>jessjelly</span>
+        Logged in as: <span>{username}</span>
       </p>
     </div>
   );

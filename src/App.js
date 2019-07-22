@@ -11,18 +11,19 @@ import Error from "./Components/Error";
 
 class App extends Component {
   state = {
-    topics: []
+    topics: [],
+    username: "jessjelly"
   };
   render() {
-    const { topics } = this.state;
+    const { topics, username } = this.state;
     return (
       <div className="App">
-        <Header />
+        <Header username={username} />
         <Nav topics={topics} />
         <Router className="main">
           <Articles path="/" />
           <Articles path="/articles/:topic" />
-          <ArticlePage path="/article/:article_id" />
+          <ArticlePage username={username} path="/article/:article_id" />
           <Error default path="/error" />
         </Router>
         <Footer />

@@ -3,8 +3,8 @@ import * as api from "../utils/api";
 
 class AddComment extends Component {
   state = {
-    username: "jessjelly",
-    body: ""
+    body: "",
+    username: this.props.username
   };
   render() {
     return (

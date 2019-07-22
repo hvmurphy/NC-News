@@ -5,21 +5,22 @@ import AddComment from "./AddComment";
 
 class Comments extends Component {
   state = {
-    comments: [],
-    username: "jessjelly"
+    comments: []
   };
   render() {
-    const { comments, username } = this.state;
+    const { comments } = this.state;
+    const { username, article_id } = this.props;
     return (
       <div className="comments">
         <AddComment
-          article_id={this.props.article_id}
+          article_id={article_id}
           updateComments={this.updateComments}
+          username={username}
         />
         <CommentsList
           comments={comments}
           username={username}
-          article_id={this.props.article_id}
+          article_id={article_id}
           fetchComments={this.fetchComments}
         />
       </div>
