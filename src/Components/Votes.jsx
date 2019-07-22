@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
-import { thisExpression } from "@babel/types";
 
 class Votes extends Component {
   state = { voteChange: 0, upDisabled: false, downDisabled: false };

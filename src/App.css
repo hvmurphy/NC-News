@@ -13,20 +13,47 @@
   color: #464868;
   background: #ececec;
 }
+.HeaderSection {
+  grid-area: header;
+  background: white;
+  padding-top: 30px;
+}
 
 .Header {
-  grid-area: header;
   margin: 0px;
   font-family: "Poppins", sans-serif;
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
   font-weight: 400;
   font-size: 4em;
-  background: white;
+  padding-top: 0px;
+  line-height: 1;
 }
+.login {
+  margin: 0px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  display: flex;
+}
+.login select {
+  font-family: "Poppins", sans-serif;
+  color: #464868;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-left: 5px;
+  margin-right: 40px;
+}
+.login img {
+  height: 25px;
+  padding-right: 5px;
+}
+
 .nc {
+  padding: 0px;
+  margin: 0px;
   color: #3279a8;
   font-size: 1.5em;
   font-family: "Monoton", cursive;
+  line-height: 1em;
 }
 
 .nav {
@@ -34,6 +61,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-content: center;
   text-transform: capitalize;
   background: #464868;
   text-decoration-color: #ececec;

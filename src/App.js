@@ -12,18 +12,27 @@ import Error from "./Components/Error";
 class App extends Component {
   state = {
     topics: [],
-    username: "jessjelly"
+    username: "jessjelly",
+    users: []
   };
   render() {
-    const { topics, username } = this.state;
+    const { topics, username, users } = this.state;
     return (
       <div className="App">
-        <Header username={username} />
+        <Header
+          users={users}
+          updateUser={this.updateUser}
+          username={username}
+        />
         <Nav topics={topics} />
         <Router className="main">
-          <Articles path="/" />
-          <Articles path="/articles/:topic" />
-          <ArticlePage username={username} path="/article/:article_id" />
+          <Articles path="/" users={users} />
+          <Articles path="/articles/:topic" users={users} />
+          <ArticlePage
+            username={username}
+            path="/article/:article_id"
+            users={users}
+          />
           <Error default path="/error" />
         </Router>
         <Footer />
@@ -32,10 +41,19 @@ class App extends Component {
   }
   componentDidMount = () => {
     this.fetchTopics();
+    this.fetchUsers();
   };
 
   fetchTopics = () => {
     api.getTopics().then(topics => this.setState({ topics }));
+  };
+
+  fetchUsers = () => {
+    api.getUsers().then(users => this.setState({ users }));
+  };
+
+  updateUser = username => {
+    this.setState({ username });
   };
 }
 

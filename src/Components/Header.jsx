@@ -1,13 +1,30 @@
 import React from "react";
+import icon from "../Images/userIcon.png";
 
-const Header = ({ username }) => {
+const Header = ({ users, updateUser, username }) => {
   return (
-    <div>
+    <div className="HeaderSection">
       <h1 className="Header">
         <span className="nc">NC </span>News
       </h1>
       <p className="login">
-        Logged in as: <select name="username" />
+        <img src={icon} alt="User icon" />
+        Logged in as:{" "}
+        <select
+          value={username}
+          name="username"
+          onChange={event => {
+            updateUser(event.target.value);
+          }}
+        >
+          {users.map(user => {
+            return (
+              <option key={user.username} value={user.username}>
+                {user.username}
+              </option>
+            );
+          })}
+        </select>
       </p>
     </div>
   );

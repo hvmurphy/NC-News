@@ -59,5 +59,5 @@ export const vote = async (id, inc_votes, section) => {
 
 export const getUsers = async () => {
   const { data } = await axios.get(`${BASE_URL}/users`);
-  return data.user;
+  return data.users;
 };

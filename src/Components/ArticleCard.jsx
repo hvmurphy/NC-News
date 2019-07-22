@@ -12,7 +12,7 @@ class ArticleCard extends Component {
             <li key={article.article_id} className="articleCard">
               <p className="topic">{article.topic}</p>
               <Link to={`/article/${article.article_id}`}>{article.title}</Link>
-              <p className="author"> Author: {article.author}</p>
+              <p className="author"> Author: {article.author}</p>{" "}
               <Votes
                 votes={article.votes}
                 id={article.article_id}

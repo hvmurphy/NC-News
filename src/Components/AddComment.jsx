@@ -8,7 +8,6 @@ class AddComment extends Component {
     commentErr: ""
   };
   render() {
-    console.log(this.state);
     return (
       <div className="addComment">
         <form onSubmit={this.handleSubmit}>
