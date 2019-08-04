@@ -3,7 +3,7 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-rows: 2fr 1fr 12fr 1fr;
+  grid-template-rows: 2fr 0.8fr 12fr 0.8fr;
   grid-template-areas:
     "header"
     "nav"
@@ -16,7 +16,7 @@
 .HeaderSection {
   grid-area: header;
   background: white;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .Header {
@@ -24,26 +24,26 @@
   font-family: "Poppins", sans-serif;
   padding: 10px 10px 0px 10px;
   font-weight: 400;
-  font-size: 4em;
+  font-size: 3.5em;
   padding-top: 0px;
   line-height: 1;
 }
 .login {
   margin: 0px;
   justify-content: flex-end;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
 }
 .login select {
   font-family: "Poppins", sans-serif;
   color: #464868;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin-left: 5px;
   margin-right: 40px;
 }
 .login img {
-  height: 25px;
+  height: 20px;
   padding-right: 5px;
 }
 
@@ -75,7 +75,7 @@
 .nav a {
   text-decoration: none;
   color: #ececec;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .nav a:hover {
@@ -129,10 +129,10 @@ a.cooking:hover {
   grid-area: footer;
   background: #464868;
   color: #ececec;
-  padding: 10px;
+  padding: 5px;
 }
 .footer img {
-  height: 25px;
+  height: 20px;
 }
 .main {
   grid-area: main;
@@ -160,8 +160,8 @@ ul {
 .articlesPage h2 {
   grid-area: title;
   margin: 0px;
-  font-size: 2em;
-  padding: 10px;
+  font-size: 1.8em;
+  padding: 8px;
 }
 .sort {
   grid-area: sort;
@@ -199,7 +199,7 @@ button:hover {
 .articleCard {
   width: 28%;
   min-width: 250px;
-  font-size: 1.5em;
+  font-size: 1.2em;
   background-color: white;
   margin: 10px;
   border-radius: 10px;
@@ -210,8 +210,8 @@ button:hover {
 }
 .topic {
   font-family: "Monoton", cursive;
-  font-size: 1.8em;
-  margin: 25px auto;
+  font-size: 1.6em;
+  margin: 10px auto;
 }
 .topic::first-letter {
   text-transform: uppercase;
@@ -227,7 +227,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 20px;
+  padding: 10px;
 }
 
 .votes p {
@@ -291,10 +291,14 @@ button:hover {
   grid-area: articleText;
   padding: 0px 15px;
 }
+.articleText h2 {
+  margin: 10px;
+}
 .articleText .body {
   font-size: 1.1em;
   text-align: justify;
   padding: 10px;
+  margin: 0px;
 }
 .articleText .votes {
   font-size: 1.5em;
@@ -304,6 +308,7 @@ button:hover {
 .articleText .author {
   font-size: 1em;
   color: #3279a8;
+  margin: 10px;
 }
 
 .comments {
